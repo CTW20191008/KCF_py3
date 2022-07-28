@@ -47,17 +47,17 @@ def draw_boundingbox(event, x, y, flags, param):
 
 if __name__ == '__main__':
 
-    # if(len(sys.argv) == 1):
-    #     cap = cv2.VideoCapture(0)
-    # elif(len(sys.argv) == 2):
-    #     if(sys.argv[1].isdigit()):  # True if sys.argv[1] is str of a nonnegative integer
-    #         cap = cv2.VideoCapture(int(sys.argv[1]))
-    #     else:
-    #         cap = cv2.VideoCapture(sys.argv[1])
-    #         inteval = 30
-    # else:
-        # assert(0), "too many arguments"
-    cap = cv2.VideoCapture(0)
+    if(len(sys.argv) == 1):
+        cap = cv2.VideoCapture(0)
+    elif(len(sys.argv) == 2):
+        if(sys.argv[1].isdigit()):  # True if sys.argv[1] is str of a nonnegative integer
+            cap = cv2.VideoCapture(int(sys.argv[1]))
+        else:
+            cap = cv2.VideoCapture(sys.argv[1])
+            inteval = 30
+    else:
+        assert(0), "too many arguments"
+
     tracker = kcftracker.KCFTracker(True, True, True)  # hog, fixed_window, multiscale
     # if you use hog feature, there will be a short pause after you draw a first boundingbox, that is due to the use of Numba.
 

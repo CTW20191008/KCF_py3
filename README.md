@@ -6,4 +6,6 @@ This project is modified form [KCFpy](https://github.com/uoip/KCFpy) and can run
 * Numba (needed if you want to use the hog feature)
 * OpenCV (ensure that you can import cv2 in python)
 # Usage：
-run run.py and use mouse to choose a roi.
+run run.py and use mouse to choose a roi.  
+or  
+```python3 run.py video```
