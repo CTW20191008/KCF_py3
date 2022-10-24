@@ -8,4 +8,4 @@ This project is modified form [KCFpy](https://github.com/uoip/KCFpy) and can run
 # Usage：
 run run.py and use mouse to choose a roi.  
 or  
-```python3 run.py video```
+```python3 run.py $video```
