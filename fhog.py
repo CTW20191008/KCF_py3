@@ -171,7 +171,7 @@ def getFeatureMaps(image, k, mapp):
 
     '''
     ### original implementation
-    r, alfa = func1(dx, dy, boundary_x, boundary_y, height, width, numChannels) #func1 without @jit  ### 
+    r, alfa = func1(dx, dy, boundary_x, boundary_y, height, width, numChannels) #func1 without @jit  ###
 
     ### 40x speedup
     magnitude = np.sqrt(dx**2 + dy**2)

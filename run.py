@@ -40,7 +40,7 @@ def draw_boundingbox(event, x, y, flags, param):
     elif event == cv2.EVENT_RBUTTONDOWN:
         onTracking = False
         if (w > 0):
-            ix, iy = x - w / 2, y - h / 2
+            ix, iy = int(x - w / 2), int(y - h / 2)
             initTracking = True
 
 
@@ -72,6 +72,7 @@ if __name__ == '__main__':
         if (selectingObject):
             cv2.rectangle(frame, (ix, iy), (cx, cy), (0, 255, 255), 1)
         elif (initTracking):
+            print(f"[TMP]: ix is {ix}, iy is {iy}, w is {w}, h is {h}")
             cv2.rectangle(frame, (ix, iy), (ix + w, iy + h), (0, 255, 255), 2)
             print([ix, iy, w, h])
             tracker.init([ix, iy, w, h], frame)
@@ -100,3 +101,6 @@ if __name__ == '__main__':
 
     cap.release()
     cv2.destroyAllWindows()
+
+# eg:
+# python3 run.py C:\Users\zhuhao\Videos\people\people_1.mp4
